@@ -13,11 +13,11 @@ was put under DC analysis at a gate-source voltage of 5V.
 
 ![NMOS Circuit Schematic with V<sub>GS</sub> = 5V and V<sub>DD</sub> = 5V](NMOS-Circuit.png)
 
-After collection a single I-C curve from this transistor, the next test was to vary
-V<sub>GS</sub> from 1 to 5V by 0.5V steps.  This would result in a *family* of I-C
+After collection a single I-V curve from this transistor, the next test was to vary
+V<sub>GS</sub> from 1 to 5V by 0.5V steps.  This would result in a *family* of I-V
 curves to be plotted when tested under a parametric analysis.
 
-Once a single I-C curve and the family of I-C curves were plotted for the NMOS transitor,
+Once a single I-V curve and the family of I-V curves were plotted for the NMOS transitor,
 the same analyses were run for a PMOS transistor, as seen in Fig. 2.
 
 ![PMOS Circuit Schematic with V<sub>sg</sub> = 5V and V<sub>dd</sub> = 5V](PMOS-Circuit.png)
@@ -44,9 +44,38 @@ the duration of 1µs.
 
 # Results
 
-Whoa check out this photograph:
+The result of the DC analysis for the NMOS and PMOS were simple I-V curves (Fig. 5 and 6) that
+plotted the drain current, i<sub>D</sub> versus the drain to source voltage, V<sub>DS</sub>.
+When comparing the NMOS simple I-V curve to that of the PMOS, the difference in shape of the
+curves despite having equivalent values should be noted.  The NMOS' curve rises more quickly
+than that of the PMOS, and also stabilizes moreso, whereas the PMOS curve still rises past
+the threshold voltage is reached.
 
-![NMOS Family I-C Curve](nmos_family_i-c_curve.png)
+![NMOS Simple I-V Curve](nmos_simple_i-v_curve.png)
+
+![PMOS Simple I-V Curve](pmos_simple_i-v_curve.png)
+
+When the transistors were placed under parametric analysis (Fig. 7 and 8) for a multitude of V<sub>GS</sub> values,
+it is even more evident that the PMOS transistor's current evens out slower than that of the NMOS.
+This information is relevant because it explains the design preference of NMOS over PMOS transistors
+when designing a circuit, as the NMOS is faster due to the carriers being electrons as opposed to holes.
+In addition, it is important to realize their differences in behavior for when they are combine in
+components such as CMOS transistors.
+
+![NMOS Family I-V Curve](nmos_family_i-v_curve.png)
+
+![PMOS Family I-V Curve](pmos_family_i-v_curve.png)
+
+For the second part of the experiment, where a transient analysis was run on the inverter circuit,
+as expected, the input voltage of the circuit was successfully inverted, as seen in Figure 9.
+
+![Transient Analysis of Inverter](Inverter-Data.png)
+
+While the input is perfectly square, as chosen when making the circuit, the output voltage has curved
+rising and falling edges.  This is due to the nature of NMOS and PMOS components.  Although there is a
+clear point at which the voltage switches the behavior of the transistor from open to closed and
+vice-versa, there is still a time of adjustment before the transistor reaches true saturation, thus
+the rounded edges.
 
 # Conclusion
 
