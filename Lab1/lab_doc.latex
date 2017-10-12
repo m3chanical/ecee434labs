@@ -14,8 +14,8 @@
 \let\Oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[1]{\Oldincludegraphics[max width=\linewidth]{#1}}
 \titleformat{\section}
-{\color{OliveGreen}\normalfont\Large\bf}
-{\color{OliveGreen}\thesection}{1em}{}
+{\color{MidnightBlue}\normalfont\Large\bf}
+{\color{MidnightBlue}\thesection}{1em}{}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
