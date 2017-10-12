@@ -51,9 +51,9 @@ curves despite having equivalent values should be noted.  The NMOS' curve rises 
 than that of the PMOS, and also stabilizes moreso, whereas the PMOS curve still rises past
 the threshold voltage is reached.
 
-![NMOS Simple I-V Curve](nmos_simple_i-v_curve.png)
+![NMOS Simple I-V Curve](nmos_simple.png)
 
-![PMOS Simple I-V Curve](pmos_simple_i-v_curve.png)
+![PMOS Simple I-V Curve](PMOS Simple.png)
 
 When the transistors were placed under parametric analysis (Fig. 7 and 8) for a multitude of V~GS~ values,
 it is even more evident that the PMOS transistor's current evens out slower than that of the NMOS.
@@ -62,14 +62,14 @@ when designing a circuit, as the NMOS is faster due to the carriers being electr
 In addition, it is important to realize their differences in behavior for when they are combine in
 components such as CMOS transistors.
 
-![NMOS Family I-V Curve](nmos_family_i-v_curve.png)
+![NMOS Family I-V Curve](NMOS Family.png)
 
-![PMOS Family I-V Curve](pmos_family_i-v_curve.png)
+![PMOS Family I-V Curve](PMOS Family.png)
 
 For the second part of the experiment, where a transient analysis was run on the inverter circuit,
 as expected, the input voltage of the circuit was successfully inverted, as seen in Figure 9.
 
-![Transient Analysis of Inverter](Inverter-Data.png)
+![Transient Analysis of Inverter](Transient Analysis.png)
 
 While the input is perfectly square, as chosen when making the circuit, the output voltage has curved
 rising and falling edges.  This is due to the nature of NMOS and PMOS components.  Although there is a
