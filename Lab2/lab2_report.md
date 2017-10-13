@@ -17,8 +17,9 @@ The lab required further use of Cadence Virtuoso to modify several parameters an
 This experiment consisted of four distinct but related parts. 
 
 1. Verifying the strength of an NMOS transistor with respect to a PMOS. 
-    * Simulate and inverter with matched PMOS/NMOS widths and measure the respective propagation delays.
-
+    * Simulate an inverter with matched PMOS/NMOS widths and measure the respective propagation delays.
+    * $t_p$ can be found with the above propagation delays, and $R_n$ can be calculated.
+2. Find $C_D$ using some cool ass techniques.
 \pagebreak
 
 # Results
@@ -31,11 +32,23 @@ $t_{PHL} = 30.07ns - 30.001ns = 0.069ns$
 
 ### Find $R_n$
 
-Verify ratios. Find $R_n$ using $t_p$. Profit. 
+$R_n$ can be found 
 
 $t_{PLH} = 56.6188ns - 50.0015ns = 6.6173ns$
 
 $t_{PHL} = 103.7145ns - 100.0005ns = 3.714ns$
+
+The value of $t_p$ can be found by averaging the two propagation delays found above, shown as follows: 
+
+$$t_p = \frac{t_{PLH} + t_{PHL}}{2} = \frac{6.6173 + 3.714}{2} = 5.16565ns$$
+
+$R_n$ can be found by algebraically manipulating the following the equation:
+
+$$t_p = 0.69*R_n*C$$
+
+$$R_n = 14972.9\Omega$$
+
+Where C is the value of the capacitor on the output of the inverter. 
 
 ### Find $C_D$
 
@@ -54,4 +67,4 @@ $t_{PHL} = 103.0953ns - 100.0004ns =$
 
 # Conclusion
 
-Conclusion? We did some totally sick shit, bro.
+
