@@ -2,9 +2,15 @@
 % Liz MacLean & Carl Anderson
 %
 
+\pagebreak
+
 # Introduction & Background
 
-Some cool stuff goes here.
+This lab provide an introduction to an IC chip creation software called Cadence Virtuoso. Virtuoso is software that allows one to create and simulate analog circuit designs.
+In this particular instance, the goal was to learn Virtuoso's design environment by creating a simple CMOS inverter circuit. 
+Then simulate its output when applied to a semi-real world situation (load capacitor to simulate chained inverters, or other output loads).
+
+\pagebreak
 
 # Procedure
 
@@ -42,6 +48,8 @@ Figure 4 is the resultant circuit.
 The circuit was then put under transient analysis to see the input and output voltages over
 the duration of 1 microsecond.
 
+\pagebreak
+
 # Results
 
 The result of the DC analysis for the NMOS and PMOS were simple I-V curves (Fig. 5 and 6) that
@@ -77,5 +85,13 @@ clear point at which the voltage switches the behavior of the transistor from op
 vice-versa, there is still a time of adjustment before the transistor reaches true saturation, thus
 the rounded edges.
 
+\pagebreak
+
 # Conclusion
 
+The simulation of the inverter circuit with load capacitor showed what a real world application would look like for a CMOS inverter.
+Due to capacitances in the devices themselves, the response of the circuits is not an instant transition from high to low (or vice versa) as discovered in theoretical designs. Capacitance and resistance
+inherent in the manufacture of these devices alter the response times in a mostly predictable way that needs to be accounted for.
+Further, the lab procedure provided an introduction to the schematic capture, library construction, and simulation aspects of Virtuoso.
+
+This lab provided a two fold introduction to digital electronics and design.
