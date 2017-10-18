@@ -14,17 +14,20 @@ The lab required further use of Cadence Virtuoso to modify several parameters an
 
 # Procedure
 
-This experiment consisted of four distinct but related parts. 
+This experiment consisted of four distinct but related parts. The main objective is to measure the propagation delays of various circuit configurations
+in order to determine the capacitance of the components used. 
 
 1. Verifying the strength of an NMOS transistor with respect to a PMOS. 
     * Simulate an inverter with matched PMOS/NMOS widths and measure the respective propagation delays.
     * $t_p$ can be found with the above propagation delays, and $R_n$ can be calculated.
 2. Find $R_N$ and $R_P$
     * Using a new circuit with different load capacitance, use propagation delays and approximating functions to find the resistance values.
-3. Find $C_D$ using some cool ass techniques.
-    * boop!
+3. Find $C_D$
+    * Implement an inverter circuit with no load capacitor. $R_N$ is already known, and the propagation delay will be entirely due to the inverter's capacitance. 
+        The resulting capacitance is from the full width of the inverter, so that will need to be taken into account.
 4. Find $C_G$
-    * More manipulation.
+    * Create a circuit with two chained inverters and measure the propagation delay between them. The propagation delay will be a result of the gate capacitance of the second inverter, 
+        which can be found in a similar manner to the previous steps.
 
 \pagebreak
 
@@ -68,13 +71,27 @@ $R_P = \frac{t_{PLH}}{0.69*C_{load}} = 19180.58\Omega$
 The time constant of an RC circuit is determined by $\tau = R_{eq}C_{eq}$. In this circuit, the high to low and low to high propagation delays are measured at half of the 
 transition between the two states. This corresponds to a multiplication by 0.69 (half-time). Using this knowledge, the equivalent resistance of the MOSFET can be calculated. 
 
+\pagebreak
+
 ### Find $C_D$
+
+![Schematic used to find $C_D$ for Part (3)](2.3\ Inverter\ Schematic.png)
+
+The output capacitor was removed in this step. This caused the propagation delay to be solely a result of the drain capacitance of the inverter. Since $R_N$ is already known,
+the capacitance can be determined with simple algebra. Behold! 
 
 $t_{PLH} = 50.1026ns - 50.0015ns =$
 
 $t_{PHL} = 100.0592ns - 100.0005ns =$
 
+\pagebreak
+
 ### Find $C_G$
+
+![Schematic used to find $C_G$ for Part (4)](2.4\ Inverter\ Schematic.png)
+
+Another inverter was added as a "load capacitor" for the first inverter. The result of this configuration is that the circuit's propagation delay is caused by the gate capacitance of the second inverter. 
+Again, the capacitance can be determined using measured delays and previously known values. 
 
 $t_{PLH} = 54.3188ns - 50.0016ns =$
 
