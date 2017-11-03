@@ -22,12 +22,15 @@ The goal of this lab is to have the rising and falling propagation delays be equ
 Since we are adjusting the size of the transistors for this design requirement to be true,
 the most straightforward way of calculating them is using the propagation time equations.
 
+The schematic diagrams shown below only display the gate itself. The load capacitor and input waves 
+were added to the main schematic (not shown) where the responses of the circuit were measured. 
+
 $$t_{PHL} = 0.69*R_n*C_{load}$$
 
 $$t_{PLH} = 0.69*R_p*C_{load}$$
 
 Based off of these equations, the only unknowns are the resistance values for the
-transistors, $R_N$ and $R_N.
+transistors, $R_N$ and $R_P$.
 
 $$R_N = \frac{12.5}{(W/L)_n}$$
 
@@ -57,7 +60,8 @@ $$p = 1.2n$$
 Since the default width for the transistors in Cadence is $1.5\mu m$, that value was chosen for
 the n-type transistor, and then p was calculated to be $1.8\mu m$.
 
-![NAND Gate Schematic](NAND_1_8.png)
+![NAND Gate Schematic](NANDGate.png)
+
 \pagebreak
 
 ## NOR Gate
@@ -77,13 +81,14 @@ $$p = 4.8n$$
 Since the default width for the transistors in Cadence is $1.5\mu m$, that value was chosen for
 the n-type transistor, and then p was calculated to be $7.2\mu m$.
 
-![NOR Gate Schematic](NOR_7_2.png)
+![NOR Gate Schematic](NORGate.png)
+
 \pagebreak
 
 ## XOR Gate
 
-The worst case scenario for the XOR gate (Fig. 3) is similar to that of the inverter, where the number of
-transistors in the pull up network were equivalent to the number of transistors in the pulldown network.
+The worst case scenario for the XOR gate (Fig. 3) is similar to that of the inverter, where the number
+of transistors in the pull up network were equivalent to the number of transistors in the pulldown network.
 When the equivalent resistances were set to eachother, the resultant
 equation was as follows:
 
@@ -98,13 +103,48 @@ Since the default width for the transistors in Cadence is $1.5\mu m$, that value
 the n-type transistor, and then p was calculated to be $3.6\mu m$.
 
 
-![XOR Gate Schematic](XOR_3_6.png)
+![XOR Gate Schematic](XORGate.png)
+
 \pagebreak
 
 # Results
 
+## NAND Gate
+
+Using the parameters listed above in the procedure, the NAND gate transistors were set up with width ratios to still achieve minimum size.
+The output waveform can be seen below, and the propagation delays were measured as follows: 
+
+$$t_{PLH} = 26.11 - 25.001 = 1.109ns$$
+$$t_{PHL} = 101.57 - 100.1 = 1.47ns$$
+$$t_p = \frac{1}{2}(1.109 + 1.47) = 1.2895ns$$
+
+![NAND Gate Waveform](NAND_wave.png)
+
+
+## NOR Gate
+
+Similar to the NAND gate, the transistor parameters were set up to match the ratio found above. The propagtion delays in this circuit 
+could not reach the 1ns specification due to limitations in the transistor sizing. 
+
+$$t_{PLH} = 75.5 - 75 = 0.5ns$$
+$$t_{PHL} = 100.48 - 100.06 = 0.42ns$$
+$$t_p = \frac{1}{2}(0.5 + 0.42) = 0.46ns$$
+
+![NOR Gate Waveform](NOR_wave.png)
+
+## XOR Gate
+
+For the XOR gate, transistor parameters were set up according to ratios found in the Procedure section. 
+
+$$t_{PLH} = 25.97 - 25.001 = 0.97ns$$
+$$t_{PHL} = 76.9 - 75.3  = 1.6ns$$
+$$t_p = \frac{1}{2}(0.97 + 1.6) = 1.285ns$$
+
+![XOR Gatea Waveform](XOR_wave.png)
 
 \pagebreak
 
 # Conclusion
 
+Overall the design goals of the experiment were met. However, in some of the cases (e.g. NOR gate), the 1ns design specification could not be achieved.
+This is mostly due to limitations in the channel width of the transistors. 
