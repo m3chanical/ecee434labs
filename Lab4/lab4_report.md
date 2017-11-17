@@ -22,7 +22,7 @@ the lab writeup. The circuit uses three inverters (created in previous labs), tw
 gates, and a clock driving the circuit.  The starting period was chosen to be 200ns, which
 translates to 5Mhz, and the transistor sizes were all left at the default sizes.
 
-![D-Latch](D-Latch.png)
+![D-Latch Schematic](D-Latch.png)
 
 Next, clock inputs were provided to the circuit along with a square wave used to represent
 data input. The function of the circuit was then observed using Virtuoso's simulator. After
@@ -40,16 +40,15 @@ clock was low, no matter the data line, the output Q remained what it was when t
 
 ![Correct Simulated Output from a D-Latch Circuit](D-Latch_Good.png)
 
-In contrast, when the frequency was high enough that it broke the behavior of the D-Latch,
-*WHAT HAD HAPPENED WAS....  This frequency is related to the rising and falling time of the output,
-because if the frequency is higher than the inverse of either of those times, there is no way the
-circuit could keep up with the clock and the inputs.*
+When the frequency was high enough, it broke the behavior of the D-Latch. This frequency is related to the $t_p$ of the circuit. When the frequency of 
+the circuit exceeds the $t_p$, the transitions don't have enough time to fully change. In the original graph, $t_p$ was observed to be roughly 3ns, so the 
+CLK was adjusted to have a 3ns period with a 50% duty cycle (1.5ns PW). The frequency at that rate was $\frac{1}{3ns} = 333.333MHz$.
+
+![Broken Simulated Output from D-Latch Circuit](D-Latch_Bad.png)
 
 \pagebreak
 
 # Conclusion
-
-In conclusion Liz is the coolest and by association so is Carl 😎 
 
 The purpose of this experiment was not only to understand the functionality of the D-Latch,
 but to also understand the limitations of it.  If this flip-flop were to be used in the field,
