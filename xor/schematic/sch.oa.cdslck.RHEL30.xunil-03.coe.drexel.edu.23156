@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      erm77
+HostName                       xunil-03.coe.drexel.edu
+ProcessIdentifier              23156
+ProcessCreationTime_UTC        1512142397
+ProcessCreationTime_Readable   Fri Dec  1 10:33:17 2017 EST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/DREXEL/erm77/ECE_E434/ECEE434/xor/schematic/sch.oa.cdslck
+TimeEditLocked                 Fri Dec  1 10:54:22 2017 EST
