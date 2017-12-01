@@ -64,8 +64,8 @@ data changes only on the leading edge of the input clock. Otherwise, the output 
 
 The setup and hold times were found as follows, using the methods mentioned in the procedure:
 
-$$setup time = $$
-$$hold time = $$
+$$setup time = 0.521ns$$
+$$hold time = 0.547ns$$
 
 
 \pagebreak
